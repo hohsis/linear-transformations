@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Advanced · Matrix transformations</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-mode="advanced">
+<main class="wrap">
+  <div class="topbar"><a class="back" href="index.html">← Back to home</a></div>
+  <h1>Advanced</h1>
+  <p class="lede">A mix of all three question styles, now with rotations (including 30°, 45° and 60°) and dilations from the origin. Get all 5 right to earn the crown.</p>
+
+  <div class="layout">
+    <div class="stage">
+      <div class="canvasbox"><canvas id="cv" role="img" aria-label="Plane showing the unit square"></canvas></div>
+      <div class="stagebar">
+        <button class="ghost" id="replay" hidden>Replay</button>
+        <label>Zoom <input type="range" id="zoom" aria-label="Zoom out"></label>
+      </div>
+    </div>
+
+    <div class="panel">
+      <section class="status" aria-label="Progress in this set">
+        <div class="setline"><span>Question <b id="qNum">1</b> of 5</span><ol class="dots" id="dots"></ol></div>
+        <div class="crownline" id="crownStatus"></div>
+      </section>
+
+      <section>
+        <p class="qtype" id="qType"></p>
+        <div id="qArea"></div>
+        <div class="row actions">
+          <button id="check" class="ghost">Check</button>
+          <button id="confirm">Confirm</button>
+          <button id="hint" class="ghost" hidden>Hint</button>
+          <button id="next" hidden>Next question</button>
+        </div>
+      </section>
+
+      <div aria-live="polite">
+        <div id="feedback" class="feedback" hidden></div>
+        <div id="summary" class="summary" hidden></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="js/matrix.js"></script>
+<script src="js/library.js"></script>
+<script src="js/classify.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/practice.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Explore · Matrix transformations</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="topbar"><a class="back" href="index.html">← Back to home</a></div>
+  <h1>Transforming the unit square</h1>
+  <p class="lede">The matrix sends the unit square <i class="v">OABC</i> to the parallelogram <i class="v">OA′B′C′</i>. The columns of the matrix are where <b style="color:var(--e1)">i</b> and <b style="color:var(--e2)">j</b> land.</p>
+
+  <div class="layout">
+    <div class="stage">
+      <div class="canvasbox"><canvas id="cv" aria-label="Plane showing the unit square and its image under the transformation"></canvas></div>
+      <div class="stagebar">
+        <label>Morph from identity <input type="range" id="tslider" min="0" max="1" step="0.01" value="1" aria-label="Morph amount"></label>
+        <label>Zoom <input type="range" id="zoom" aria-label="Zoom out"></label>
+      </div>
+      <p class="hint">Scroll over the plane to zoom. Drag the arrow tips to set the columns of the matrix directly; hold Shift for free placement.</p>
+    </div>
+
+    <div class="panel">
+      <section>
+        <h2>Transformation matrix</h2>
+        <div class="matrow">
+          <span class="mname">T =</span>
+          <div id="mat"></div>
+        </div>
+        <p class="small">Entries accept things like <span class="math">1/2</span>, <span class="math">√3/2</span>, <span class="math">-sqrt(2)/2</span> or <span class="math">cos(pi/6)</span>.</p>
+        <div class="row" style="margin-top:8px">
+          <select id="preset" aria-label="Preset transformation">
+            <option value="identity">Identity</option>
+            <option value="dily">Dilation from the y-axis, factor k</option>
+            <option value="dilx">Dilation from the x-axis, factor k</option>
+            <option value="dilo">Dilation from the origin, factor k</option>
+            <option value="refx">Reflection in the x-axis</option>
+            <option value="refy">Reflection in the y-axis</option>
+            <option value="refyx">Reflection in y = x</option>
+            <option value="refynx">Reflection in y = −x</option>
+            <option value="rot">Rotation θ° anticlockwise</option>
+            <option value="shx">Shear parallel to the x-axis, factor k</option>
+            <option value="shy">Shear parallel to the y-axis, factor k</option>
+            <option value="proj">Projection onto the x-axis</option>
+            <option value="custom" hidden>Custom</option>
+          </select>
+          <label class="row small" id="paramWrap" hidden><span id="paramLabel">k =</span><input type="text" class="param" id="param" value="2" aria-label="Preset parameter"></label>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <button id="play">Play from identity</button>
+          <button class="ghost" id="reset">Reset</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Show</h2>
+        <div class="checks">
+          <label><input type="checkbox" id="tgGrid" checked> Transformed grid</label>
+          <label><input type="checkbox" id="tgBasis" checked> Images of i and j</label>
+          <label><input type="checkbox" id="tgSquare" checked> Image of the square</label>
+          <label><input type="checkbox" id="tgGhost" checked> Original square</label>
+          <label><input type="checkbox" id="tgLabels" checked> Vertex coordinates</label>
+        </div>
+      </section>
+
+      <section>
+        <h2>What the matrix does</h2>
+        <dl class="facts">
+          <dt>Type</dt><dd id="fKind">The identity transformation</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Images of the vertices</h2>
+        <div class="product"><div class="eq" id="product"></div></div>
+      </section>
+    </div>
+  </div>
+  <div class="vis" aria-live="polite" id="live"></div>
+</main>
+
+<script src="js/matrix.js"></script>
+<script src="js/library.js"></script>
+<script src="js/classify.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/modes/explore.js"></script>
+</body>
+</html>

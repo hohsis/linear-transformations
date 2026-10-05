@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matrix transformations practice</title>
+<meta name="description" content="Practise linear transformations of the plane with 2 × 2 matrices: dilations, reflections, shears and rotations of the unit square.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>Matrix transformations</h1>
+  <p class="lede">See how a 2 × 2 matrix moves the unit square, then practise naming transformations and finding their matrices. The columns of the matrix tell you where <b style="color:var(--e1)">i</b> and <b style="color:var(--e2)">j</b> land.</p>
+  <p class="small">Work through the sections in order: opening each one unlocks the next. Get 5 out of 5 in a set to earn a crown, and earn all three practice crowns to unlock Advanced.</p>
+
+  <ol class="cards">
+    <li><a class="card" data-key="explore" href="explore.html">
+      <span class="step">1</span>
+      <svg viewBox="0 0 56 56" aria-hidden="true"><rect class="i-ghost" x="8" y="20" width="28" height="28"/><path class="i-img" d="M8 48 L40 40 L52 12 L20 20 Z"/><path class="i-e1" d="M8 48 L40 40"/><path class="i-e2" d="M8 48 L20 20"/></svg>
+      <h2>Explore</h2>
+      <p>Type any matrix, pick a preset or drag the arrows, and watch the unit square change.</p>
+      <span class="go">Open →</span>
+    </a></li>
+    <li><a class="card" data-key="name" href="name.html">
+      <span class="step">2</span>
+      <svg viewBox="0 0 56 56" aria-hidden="true"><rect class="i-opt" x="6" y="8" width="44" height="9" rx="3"/><rect class="i-ok" x="6" y="23" width="44" height="9" rx="3"/><rect class="i-opt" x="6" y="38" width="44" height="9" rx="3"/></svg>
+      <h2>Name the transformation</h2>
+      <p>Watch the square move, then choose the right description from four options.</p>
+      <span class="go">Start →</span>
+    </a></li>
+    <li><a class="card" data-key="describe" href="describe.html">
+      <span class="step">3</span>
+      <svg viewBox="0 0 56 56" aria-hidden="true"><path class="i-br" d="M14 12 h-5 v32 h5 M42 12 h5 v32 h-5"/><text x="21" y="25" class="i-t">1</text><text x="31" y="25" class="i-t">k</text><text x="21" y="40" class="i-t">0</text><text x="31" y="40" class="i-t">1</text></svg>
+      <h2>Description → matrix</h2>
+      <p>Read a transformation in words and write down its matrix.</p>
+      <span class="go">Start →</span>
+    </a></li>
+    <li><a class="card" data-key="match" href="match.html">
+      <span class="step">4</span>
+      <svg viewBox="0 0 56 56" aria-hidden="true"><path class="i-target" d="M8 48 L32 40 L48 14 L24 22 Z"/><circle class="i-d1" cx="32" cy="40" r="4"/><circle class="i-d2" cx="24" cy="22" r="4"/><circle class="i-d3" cx="48" cy="14" r="4"/></svg>
+      <h2>Match the target</h2>
+      <p>Read the target shape off the grid and enter the matrix that makes it.</p>
+      <span class="go">Start →</span>
+    </a></li>
+    <li><a class="card" data-key="advanced" href="advanced.html">
+      <span class="step">5</span>
+      <svg viewBox="0 0 56 56" aria-hidden="true"><rect class="i-ghost" x="20" y="20" width="16" height="16"/><path class="i-img" d="M36 36 L36 52 L20 52 L20 36 Z" transform="rotate(-45 28 28)"/><path class="i-e1" d="M28 28 L39 17"/><path class="i-e2" d="M28 28 L17 17"/></svg>
+      <h2>Advanced</h2>
+      <p>All three question styles mixed, with rotations and dilations from the origin.</p>
+      <span class="go">Start →</span>
+    </a></li>
+  </ol>
+
+  <footer>
+    <p>Nothing you type leaves this browser. Your progress and crowns are saved on this device.
+    <button type="button" class="linkbtn" id="resetProgress">Reset my progress</button></p>
+  </footer>
+</main>
+
+<script src="js/matrix.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

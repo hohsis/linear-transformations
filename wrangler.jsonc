@@ -1,0 +1,16 @@
+// Cloudflare Workers static-assets config: serves the files in ./public, no build step.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "linear-transformations",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  // Cloudflare creates the DNS record and certificate for this on deploy.
+  // The archival.zip zone must be on the same Cloudflare account.
+  "routes": [
+    { "pattern": "transformations.archival.zip", "custom_domain": true }
+  ]
+}
